@@ -20,5 +20,9 @@ test('To do list', async ({page}) => {
     const header = page.getByRole('heading', {name: "Todo List App"})
     await expect(header).toBeVisible()
     // 3. enter a todo into the input with the "New Todo:" label
+    const input = page.getByLabel("New Todo");
+    await input.fill("a todo")
+    await expect(input).toHaveValue("a todo")
+
 
 })
